@@ -1,0 +1,30 @@
+		to connect over a local network via ssh
+Run:
+	avahi-browse -tl _workstation._tcp
+To get a list of Ubuntu workstations in the local network, then you can connect to them by running:
+	ssh <username>@<computer-name>.local
+
+		
+
+		
+
+		chat over lan from linux to linux
+
+You actually can do this with netcat, I believe it is already installed in most cases on linux, and it's dead simple.
+
+On PC 1, type: nc -l 55555
+
+On PC 2, type: nc $IP 55555, where $IP equals the local IP address of PC 1 [e.x. 192.168.2.50]
+
+Once you do this, in the same box, from PC 2, type something and press enter. Then go over and look at PC 1, and your message will be there! It works both ways.
+
+You can also choose a different port than 55555, or if you opened your firewall, you can do this through the internet via your external IP.		
+
+
+
+			Disable password based authentication in ssh
+To disable this setting, you can do the following:
+	nano /etc/ssh/sshd_config
+		ChallengeResponseAuthentication no
+		PasswordAuthentication no
+		UsePAM no			

@@ -1,0 +1,227 @@
+JQUERY TUTORIAL
+
+1. $(document).ready(function() { 				-->	To perform an operation at page load.
+	});
+
+2. $('#id').load(function() { 					-->	To perform an operation after #id element properly loaded.
+	});
+
+3. $(window).load(function() {  		-->	To perform an operation after all the elements on the page are loaded correctly.
+	});
+
+4. $(window).unload(function() {  				-->	To perform an operation at  the time when user leaves the page.
+	});
+
+5. var confirmBox = confirm('Are u  sure u want to leave');  	-->	Confirm box with OK and CANCEL button.
+									If(confirmBox) {
+										//Code to perform on click on OK button			
+									} else {
+										//COde to perform on CANCEL button click
+									}
+
+6. var count = $('*').length;						-->	To get total number of selector element on a page by alert
+										count.
+
+7. var Count = $('#area').find('*').length;				-->	To find number of element in particular area having id area.
+
+8. var value = $('#id').val();						-->	To get value of a textbox with its id.
+
+9. var text = $('#id').text();						--> 	To get text of an element such as paragraph <p> </p>.
+
+10. $('#id').click(function() {						-->	To perform operation at click event of a  button.
+	});  	
+
+11. $('p').text('Hello');						-->	To set the Hello text in the <p></p> element.
+
+12. $(':button').click(function() { 					-->	To set operation on all button click.
+	});									":" here is used because the selector is 											<input type="button"/>
+
+13. $(':button').attr('value', 'Please wait...');			-->	To change the attribute 'Value' of button to "please wait".
+
+14. $(':text').focusin(function() {
+		$(this).css('background-color', 'yellow');		--> 	To set bg-color yellow of <input type="text"/> on focus in.
+	});
+
+15. $('p').css('background-color', 'black').css('color', 'white');	-->	To set multiple css property of <p></p> using jQuery.
+
+16. $(':button', 'p').click(function() {				-->	To set same property to multiple selector.
+	}); 
+
+17. $('.table tr:even').addClass('highlight');				-->	Even/Odd Selector to colour table or anything.
+
+18. $('a[href="http://www.google.co.in"]').attr("src", "/click.jpg");	-->To change src attribute of <a> tag having href="google.co.in".
+
+19. $('input[type="email"]').focusin(function() {
+		//Code here...
+	}).blur(function() {
+		//Code here...
+	});								-->	can append as many event by putting '.' seperator.
+
+20. jQuery.trim("   Hello   ");						-->	To trim whitespace before and after text.
+
+21. $("#names_list li:contains('"+text_to_be_searched+"').addClass('highlight');	--> Highlight typed text from ul list.
+
+22. $(':button').click(function() {
+		$(this).attr('disabled', true);
+	});								-->	To disable button on click event.
+
+23. $('input[type="file"]').change(function() {
+		$(this).next().removeAttr('disabled');
+	}).next().attr('disbaled', 'disabled');				-->	To Disable Upload button next to File select textbox until file
+										is not selected.
+										And Enable it again if file is selected.
+
+24. $('#id').hide();							-->	To Hide something.
+
+25. $('#id').show();							-->	To show something already hided.
+
+26. $('#id').dblclick(function() {...});				-->	To fire an event on double click of a button.
+
+27. $('#list').change(function() {
+		var selectedValue = $('#list').val();
+		alert("you have selected " +selectedValue);
+	});								-->	To get the value of selected option in dropdown list.
+
+28. $('#form_id').submit(function() {...});				-->	To submit a form having id = form_id.
+
+29. $('#textarea_id').scroll(function() {...});				-->	To fire an event on scroll in textarea.
+
+30. var scrollPosition = $('#textarea_id').scrollTop();			--> 	To get the current position where u r scrolling right now.
+
+31. $('#id').select(function() {...});					-->	To fire an event when some text is selected.
+
+32. $('a').bind('mouseenter mouseleave', function() {...});		-->	We can bind a series of event on an element using bind method.
+
+33. $('.duplicate').live({
+		click: function() {
+				alert("you clicked");
+				$(this).after('<input type="button" class="duplicate" value="click"/>');
+			},
+		dblclick: function() {...}
+	});								-->	To create dupllicate of any element on any action use LIVE.
+										Also we can mention all events by using "," seperator.
+
+34. $('#id').load('page.php');						-->	To load one file into another.
+
+35. $.ajax({
+		url:'index.php',
+		type: 'POST',
+		data:'data='+data+'&text=hello',
+		statusCode: {
+			404: function() {
+					$('#id').html("page not found");
+			},
+			000:function() {
+				//Error msg...			
+			}
+		},
+		success: function(msg) {
+			$('#id).html(msg);
+		}
+	}).error(function() {
+		alert("index.php is unavailable");
+	}).success(function() {
+		//Code here
+	}).complete(function() {...});					-->	Ajax Request
+
+36. $('#id').has('li')							-->	To check weather #id element contains li in it or not.
+
+37. $('#id').append('hello');						-->	To append Hello at the end.
+
+38. $('#span').appendTo('#span2');					-->	To append(cut & paste) all the content of span to span2.
+										It also removes the content of span.
+
+39. $('#span1).clone().appendTo('#span2');				-->	To copy and paste content of span1 to span2.
+
+40. $('#id').height();							-->	To get height of an element having id=#id.
+
+41. $('#id').width();							-->	To get width of an element having id=#id.
+
+42. $('#dropdown').append('<option>' + Text + '</option>');		-->	To add option in dropdown list dynamically.
+
+43. $(window).resize(function()  {...});				-->	To perform operation on resizing window.
+
+44. names.push('Balwant');						-->	To insert element(Balwant) at the end of (names) array.
+
+45. $.each(names, function (index, value) {
+	$('#div_id').append(value + '<br/>');
+     });								-->	Foreach loop in javascript.
+										'names' is the name of array which is to be extract.
+										'index' & 'value' are must parameters but we dont have to pas 
+										them.
+
+46. $(jQuery.inArray('Balwant', names));				-->	It gives index of Balwant in names array.And can also  be used 
+										to check  weather an element is in array or not.
+										It returns -1 when condition fails.
+
+47. jQuery.now();							-->	It gives timestamp in milliseconds.
+
+48. var interval = setInterval(function () {				-->	It is used to iterate a logic after every 10 milliseconds.
+	if(somecondition false) {	
+		clearInterval(interval);					//To Exit the infinte loop.
+	}	
+}, 10);										//Usually used to give animation.
+										
+
+49. Date.parse('5 july 2015');						-->	Converts the date into timestamp of milliseconds.
+
+
+
+	XXXXXXXXXX---------------------------------jQuery.ui.js required NOW AND jQuery.ui.css also------------------------------------------XXXXXXXXXXX
+
+50. $('#id').sortable();						-->	It make any <li> or <tr> sortable where id of <ul> or <tbody> 											is #id.
+
+51. $('#id').sortable({							-->	More Options 
+		containment: 'parent',						//This tell that row is dragable only in its parent boundry.
+		tolerance: 'pointer',						//This makes the drag and drop smooth.
+		revert: true,							//This tells that on droping it should goes back to its parent.
+		cursor: 'hand',							//This is for changing cursor icon at the time of dragging row.
+		connectWith: '#id, #id2',					//This  allows merging two tables rows with each other.
+		axis: 'x',							//This allows vertical sorting.By deafult it is 'Y'.
+ 		update: function() {						//This function get called everytime sorting is done.
+			var status = $(this).text();
+			$('div').text(status);
+		}	
+	});								
+
+52. $('#textboxid').datepicker({					-->	To add DatePicker at a textbox.
+		dateFormat: 'mm/dd/yy',						//To give desired date format.
+		minDate: '-5d',							//To restrict the minimum date you can pick.
+		maxDate: '+1m +3d',						//To restict the maximum date you can pick.
+		showAnim: 'bounce'						//To give animation to the datepicker.
+	});
+
+53. $('#div').dialog({							-->	To Produce Custom Dialog Box on a DIV having property 'title' 											set and the message will be the text in div body.
+		buttons: {
+			'OK':function () {					//Event to occur at click of OK button.
+				$(this).dialog('close');
+				},
+			'NOT OK': function() {...}
+			},
+		closeOnEscape: true,						//Close on pressing ESC key.
+		draggable: false,						//Draggale or Not.
+		resizable: false,						//Resizable or Not.
+		modal: true,							//Disable background page until dialog is not closed.
+		position: ['x value', 'y value']				//To give position to our custom dialog box.
+	});
+
+54.  $('#div').progressbar({value:50});					-->	To set a progress bar of value 50 that is half filled.
+
+55.  $('#div').slider({							-->	To Create a Slider
+		min:1,								//Min Value
+		max:100,							//Max Value
+		step:5,								//Increase by 5 every step.
+		range:true,							//To set 2 slider for MIN and MAX price value.
+		values: [20, 40],						//Initial Value of MIN and MAX slider.		
+		orientation:'vertical',						//Slider should be horizontal or vertical.By default horizontal
+		
+		slide: function(event,ui) {
+			$('#price').html(ui.values[0] + "TO " + ui.values[1])	//Action to perform at slide event. 'ui.values' array give 												slider value
+		},
+		stop: function(event,ui) {...}					//Action to perform at End of sliding event.
+	});
+
+56. $('#div').tabs({								//Create Vertically Sortable Tabs.
+		//DO whatever.							//HTML
+										//<div id='div' ><ul><li><a href='#about'>About</a></   										li></ul><div id='about'>Content</div></		   div>			
+	}).find('ui-tabs-nav').sortable({axis: 'x'});
